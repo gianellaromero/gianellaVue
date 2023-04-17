@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p v-for="(valor, propiedad) in usuario">username: {{valor.username}} : 
+            role: {{valor.role}} : {{propiedad}}</p>
+            
+        <li v-for="(tarea,index) in tareas">{{tarea.nombre}} - {{index}}</li>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data: {
+             usuario:[{
+                username: 'juanwmedia',
+                role:'admin',
+             }],
+                tareas:[
+                    {nombre:'Aprender JavaScript moderno',tiempo:3},
+                    {nombre:'Aprender Vue.js',tiempo:7},
+                    {nombre:'Reparar el coche',tiempo:22},
+                    {nombre:'Viajar mas',tiempo:16},
+                    {nombre:'Comprar la cena',tiempo:12},
+                    {nombre:'Mejorar como desarrollador',tiempo:9},
+                    {nombre:'Dar un curso',tiempo:14},
+                ]
+             
+            }
+        });
+        Vue.config.devtools=true
+    </script>
+</body>
+</html>
